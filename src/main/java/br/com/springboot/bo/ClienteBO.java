@@ -35,8 +35,8 @@ public class ClienteBO implements CRUD<Cliente, Long>{
 	}
 
 	@Override
-	public void remove(Cliente cliente) {
-		dao.remove(cliente);
+	public void remove(Long clienteId) {
+		dao.remove(clienteId);
 	}
 	
 	public void inativa(Cliente cliente) {
