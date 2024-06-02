@@ -7,5 +7,5 @@ public interface CRUD<T, ID> {
 	List<T> lista();
 	void insere(T t);
 	void atualiza(T t);
-	void remove(T t);
+	void remove(ID id);
 }
