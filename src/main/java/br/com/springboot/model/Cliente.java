@@ -44,10 +44,10 @@ public class Cliente {
 	@NotNull(message = "Informe o sexo")
 	private Sexo sexo;
 	
-	@Column(length = 10)
+	@Column(length = 14)
 	private String telefone;
 	
-	@Column(length = 11)
+	@Column(length = 15)
 	private String celular;
 	
 	@Column(length = 50)
