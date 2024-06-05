@@ -23,6 +23,7 @@ public class ClienteDAO implements CRUD<Cliente, Long>{
 		return entityManager.find(Cliente.class, id);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Cliente> lista() {
 		Query query = entityManager.createQuery("SELECT c FROM Cliente c");
@@ -30,11 +31,8 @@ public class ClienteDAO implements CRUD<Cliente, Long>{
 	}
 
 	@Override
-	public void insere(Cliente cliente) {
-		if (cliente.getId() == null) 
-			entityManager.persist(cliente);
-		else
-			entityManager.merge(cliente);
+	public void insere(Cliente cliente) { 
+		entityManager.persist(cliente);
 	}
 
 	@Override
