@@ -26,7 +26,7 @@ public class ClienteBO implements CRUD<Cliente, Long>{
 
 	@Override
 	public void insere(Cliente cliente) {
-		if (cliente.getId() != null)
+		if (cliente.getId() == null)
 			dao.insere(cliente);
 		else
 			dao.atualiza(cliente);
