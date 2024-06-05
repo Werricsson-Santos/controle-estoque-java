@@ -30,11 +30,14 @@ public class ClienteController {
 	
 	@RequestMapping(value = "", method = RequestMethod.POST)
 	public String salva(@Valid @ModelAttribute Cliente cliente, BindingResult result, RedirectAttributes attr) {
+		Long id = cliente.getId();
 		if (result.hasErrors()) {
 			return "/cliente/formulario";
 		}
 		else {
 			clienteBO.insere(cliente);
+			String feedback = id == null ? "Cliente cadastrado com sucesso" : "Cliente atualizado com sucesso";
+			attr.addFlashAttribute("feedback", feedback);
 			return "redirect:/clientes";
 		}
 	}
